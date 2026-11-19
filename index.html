@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#162e36">
+<title>Europa física · 1.º de ESO</title>
+<meta name="description" content="Estudia el mapa físico de Europa. Localiza, escribe y comprueba lo que sabes con un simulacro.">
+<link rel="stylesheet" href="estilos.css">
+<script defer src="lugares.js"></script>
+<script defer src="app.js"></script>
+</head>
+<body data-atlas="europa">
+<header class="top">
+  <div class="wrap masthead">
+    <div><p class="course">Geografía · 1.º de ESO</p><h1>Europa física</h1><p class="intro">Aprende a localizar y nombrar los lugares de tu mapa.</p></div>
+    <div class="mastery"><span id="mastery-text">0 de 0 dominados</span><progress id="mastery-bar" value="0" max="1" aria-label="Lugares dominados"></progress><small>Acierta al localizar y al escribir cada nombre.</small></div>
+  </div>
+</header>
+<div class="wrap page">
+  <nav class="territories" aria-label="Mapas para estudiar">
+    <a href="index.html" aria-current="page">Europa</a><a href="espana.html">España</a>
+  </nav>
+  <nav class="tabs" aria-label="Modos de estudio">
+    <button data-mode="explore" aria-current="page">Explora</button><button data-mode="locate">Localiza</button><button data-mode="name">Escribe</button><button data-mode="review">Mis fallos <span id="review-count"></span></button><button data-mode="exam">Simulacro</button>
+      <button id="sound-toggle" type="button" aria-label="Sonido de aciertos" aria-pressed="true">Sonido activado</button>
+  </nav>
+  <main class="workspace">
+    <section class="atlas" aria-labelledby="atlas-title">
+      <div class="atlas-head">
+        <h2 id="atlas-title">Mapa físico de Europa</h2>
+        <div class="map-actions"><button id="zoom-toggle" type="button" aria-pressed="false" aria-controls="map-scroll">Ampliar mapa</button><button id="source-toggle" type="button" aria-pressed="false">Ver mapa anotado</button></div>
+      </div>
+      <div class="map-scroll" id="map-scroll">
+        <div class="map-frame" id="map-frame">
+          <img id="map-image" src="mapa.png" data-annotated="solucionario.png" width="1307" height="873" alt="Mapa físico de Europa con el norte arriba. El océano Atlántico queda a la izquierda y el mar Mediterráneo en la parte inferior.">
+          <svg id="overlay" viewBox="9 8 1307 873" aria-label="Capa interactiva del mapa">
+            <g id="quiz-marker"></g>
+          </svg>
+        </div>
+      </div>
+      <footer class="atlas-footer"><span id="map-instruction">Elige un nombre para verlo en el mapa.</span><span>Mapa base de Editorial Teide</span></footer>
+    </section>
+    <section class="panel" id="panel" aria-labelledby="panel-title"></section>
+  </main>
+</div>
+<section id="print" class="print-page" aria-label="Mapa y lista imprimibles">
+  <h1>Europa física · Mapa mudo</h1>
+  <p>Nombre _______________________________________ &nbsp; Fecha _______________</p>
+  <p>Localiza cada lugar en el mapa. Escribe su número y, si hace falta, dibuja una línea hasta el lugar correspondiente.</p>
+  <img src="mapa.png" alt="Mapa físico mudo de Europa">
+  <div id="print-list"></div>
+  <p>Mapa base de Editorial Teide.</p>
+</section>
+<section id="print-numbered" class="print-page" aria-label="Ficha numerada imprimible">
+  <h1 id="numbered-title">Europa física · Ficha numerada</h1>
+  <p>Nombre _______________________________________ &nbsp; Fecha _______________</p>
+  <p id="numbered-instruction">Escribe el nombre de cada lugar junto a su número. Si un número lleva una línea, fíjate en el punto donde termina.</p>
+  <div class="print-map">
+    <img src="mapa.png" alt="Mapa físico mudo de Europa">
+    <svg id="print-markers" viewBox="9 8 1307 873" aria-hidden="true"></svg>
+  </div>
+  <ol id="numbered-answers" aria-label="Lugares numerados"></ol>
+  <p>Mapa base de Editorial Teide.</p>
+</section>
+<audio id="correct-sound" src="acierto.wav" preload="auto"></audio>
+</body>
+</html>
